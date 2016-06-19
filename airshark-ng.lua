@@ -126,6 +126,12 @@ function printPacket()
 end
 
 -- Main program logic
+if not modem then
+  print("Error: No modem found!")
+  print("AirShark is useless without a modem and will now exit")
+  return
+end
+
 local tArgs = {...}
 if #tArgs == 1 then
   -- First parameter: Channel filter
